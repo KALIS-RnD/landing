@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>국토안전기술연구원 정책연구실</title>
+  <meta name="description" content="국토안전관리원 국토안전기술연구원 정책연구실 주요 링크 모음" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── 색상 변수 ─────────────────────────────────────────── */
+    /* CI 공식 색상: PANTONE 288 C(진남색) + PANTONE 301 C(파랑) */
+    :root {
+      --color-primary:   #003876; /* PANTONE 288 C — 기관 대표색 */
+      --color-secondary: #0067B1; /* PANTONE 301 C — 보조색 */
+      --color-bg:        #f4f6f9;
+      --color-surface:   #ffffff;
+      --color-text:      #1a1a2e;
+      --color-text-sub:  #555577;
+      --color-border:    #dde3ed;
+      --color-shadow:    rgba(0, 56, 118, 0.10);
+      --color-badge-bg:  #e8eef7;
+      --color-badge-txt: #003876;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg:        #0d1117;
+        --color-surface:   #161b22;
+        --color-text:      #e6edf3;
+        --color-text-sub:  #8b949e;
+        --color-border:    #30363d;
+        --color-shadow:    rgba(0, 0, 0, 0.40);
+        --color-badge-bg:  #1c2a3a;
+        --color-badge-txt: #79b8ff;
+      }
+    }
+
+    /* ─── 리셋 & 기본 ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; }
+    body {
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 2rem;
+    }
+
+    /* ─── 헤더 ──────────────────────────────────────────────── */
+    header {
+      width: 100%;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 2rem 1.5rem 1.6rem;
+      text-align: center;
+    }
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .logo-img {
+      width: 84px;
+      height: auto;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+    }
+    header h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+    header p.dept {
+      margin-top: 0.35rem;
+      font-size: 0.88rem;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    /* ─── 메인 컨테이너 ─────────────────────────────────────── */
+    main {
+      width: 100%;
+      max-width: 520px;
+      padding: 1.5rem 1rem 0;
+      flex: 1;
+    }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-text-sub);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      padding-left: 2px;
+    }
+
+    /* ─── 카드 버튼 ─────────────────────────────────────────── */
+    .card-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .card {
+      display: flex;
+      align-items: center;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      text-decoration: none;
+      color: var(--color-text);
+      box-shadow: 0 2px 8px var(--color-shadow);
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+      min-height: 72px; /* 터치 영역 확보 */
+      gap: 1rem;
+      /* button처럼 사용할 경우를 위한 리셋 */
+      font-family: inherit;
+      font-size: inherit;
+      text-align: left;
+      width: 100%;
+      background-color: var(--color-surface);
+    }
+    .card:hover, .card:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px var(--color-shadow);
+      border-color: var(--color-secondary);
+      outline: none;
+    }
+    .card:active { transform: translateY(0); }
+    .card-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      width: 2rem;
+      text-align: center;
+      line-height: 1;
+    }
+    .card-body { flex: 1; }
+    .card-title {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .card-desc {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--color-text-sub);
+      margin-top: 0.25rem;
+      line-height: 1.5;
+    }
+    .card-arrow {
+      font-size: 1.1rem;
+      color: var(--color-secondary);
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    /* 구독 카드 전용 */
+    .card.subscribe {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .card.subscribe .card-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+    .card.subscribe .card-arrow { margin-left: auto; }
+    .privacy-note {
+      font-size: 0.72rem;
+      color: var(--color-text-sub);
+      line-height: 1.55;
+      border-top: 1px solid var(--color-border);
+      padding-top: 0.5rem;
+      width: 100%;
+    }
+    .privacy-note strong { font-weight: 700; }
+
+    /* ─── 모달 (정책연구실 연락처) ──────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 100;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--color-surface);
+      width: 100%;
+      max-width: 520px;
+      border-radius: 20px 20px 0 0;
+      padding: 1.5rem 1.25rem 2.5rem;
+      max-height: 85dvh;
+      overflow-y: auto;
+      animation: slideUp 0.22s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+    .modal-handle {
+      width: 40px;
+      height: 4px;
+      background: var(--color-border);
+      border-radius: 2px;
+      margin: 0 auto 1.25rem;
+    }
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+    @media (prefers-color-scheme: dark) {
+      .modal-title { color: #79b8ff; }
+    }
+    .contact-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .contact-table thead th {
+      background: var(--color-badge-bg);
+      color: var(--color-badge-txt);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+    }
+    .contact-table thead th:last-child { text-align: center; }
+    .contact-table tbody tr { border-bottom: 1px solid var(--color-border); }
+    .contact-table tbody tr:last-child { border-bottom: none; }
+    .contact-table tbody td {
+      padding: 0.75rem 0.75rem;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+    .contact-table tbody td:last-child { text-align: center; }
+    .tel-link {
+      display: inline-block;
+      padding: 0.3rem 0.65rem;
+      background: var(--color-badge-bg);
+      color: var(--color-secondary);
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+    .tel-link:hover { text-decoration: underline; }
+    .modal-close {
+      display: block;
+      margin: 1.25rem auto 0;
+      padding: 0.75rem 2.5rem;
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      min-height: 48px;
+    }
+    .modal-close:hover { opacity: 0.88; }
+
+    /* ─── 푸터 ──────────────────────────────────────────────── */
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--color-text-sub);
+      line-height: 1.7;
+    }
+    footer a {
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- ── 헤더 ─────────────────────────────────────────────────── -->
+  <header>
+    <div class="logo-wrap">
+      <img class="logo-img"
+           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMsAAADMCAYAAADd/leLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABUpJREFUeNrs3b1rJGUcwPHZJ4lePCGdL9elsjtjI3hgIdhekeosBCMWVoKNlcVhYWNABCsLX6ZTG4v7B1IZsPA4O8sTbI4okuIiaDLuCieKl82+zOz8nmc+X1gmLCzLPDufnVnIPM+oaZpKsXruk0+v3n7zjR+MRKySIYjV/uHuzkvb3309eu/bL4wGLJoCZbw5eGTtj0vj7WvAwKIpUMaPrX89DQwsmgEKMLBoDijAwKI5oAADCyhzQAEGFlAWeDkwsIACDCxqFwowsIACDCygdAMFGFhAAQYWULoNGFhAAQYWUICBBZTeoAADCyjAwAIKMLCAAgwsygkKMLCAAgwsoAADCyjAwAJKBQwsKhMKMLCAAgwsoAADCyjAwAIKMLCAAgwsAgUYWEABBhZQgIEFFGBgAQUYWLLvI1CAgUXAwCJgYBEwsAgYWAQMLBIwsAgYWAQMLAIGFgEDi4CBRRoeGFgEDCwCBhYBA4uAgUUqAAwsAgYWAQOLgIFFwMAiFQAGFgEDi4CBRcDAImAig4FFwMAiYGARMLBIkcHAImBgETCwCBhYpMhgYBEwsAgYWKRewMAiYGARMO223vUb7B/u7nzw/f3Pjk7OjqOO9vXtR5968cqGwy5vMFVz89petlgmUMabg1efubT18Z37J6dNtRlxpH/9/eyu4w2Y3i7DHkAZP7auXE7VW88+trk2qk58psr1kix1DeXBc8AodzBpFVCAUQlg0qqgAKPcwaRVQgFGOYNJq4YCjHIFk/qAAoxyBJP6ggJMXo1+OR48mNQnFGDyKd29V42Ojk+GDCb1DQWYjMD8dG9zyGBSBCjAAJMDmBQFCjDARAeTIkEBBpjIYFI0KMAAExVMiggFGGAigklRoQADTDQwKTIUYICJBCZFhwIMMFHApBygAANMBDApFyjAANM3mJQTFGCA6RNMyg0KMMD0BSblCAUYYPoAMzmz7OQIBRhgVr4f77zwzeQU83rOOwEMMB1XTybv+/s3CzACZjqUf37gAyNgpkP5DxZgBMz5UP6HBRgB83AoD8UCjAYOpj5vJv5z/+sYGA0QTD1tyYqp97MAowGBqS9a2+XCOyWB0QDA1LMsgjTTPfjAqGAw9ayrhc08uwswKhBMPc+yenPNGwaMCgJTz7v+5NwzUgKjAsDUiyzUutBcx8AoYzD1oisaLzyLfklgnr6cnnBoDgJMvczS30utz1IKmOef3Nh0WBYPZikoS2MpBYyKB7M0lFawAKPgYFqB0hoWYBQUTGtQWsUCjIKBaRVK61iAURAwrUPpBAsw6hlMJ1A6wwKMegLTGZRJ613uyATM/uHu5M/PfayZt752p/rz9LeQYH4+evxsY/3Hsw9f3ut0CLreEWDK6PTq9tvjb+2DQZ/FVvEmLskECzCCBRipVyzACBZgBAswUu9YgBEswAgWYARLBYyUERZgBAswggUYwQKMlBMWYAQLMIIFGMECjJQTFmAECzCCBRjBAoxgAUYqFAswggUYwQKMYAFGsAAjFYoFGMECjGABRrAAI1iAESzASLAAI1iAESzACBZgBAswggWYoVc3N68dwCJgLoayZxhgAQYUWIABBRZgQIEFGFBgAQYUWIABBRYNDQwosAADCizAgAILMKDAAgwosAADCiwqDwwosAADCizAgAILMKDAAgwosCgzMKDAAgwosAADCizAgAKLIoEBBRZgQIEFGFBg0crAgAILMKDAAkw7YECBBRhQYFE7YECBBRhQYFE7YECBRTOAAQUWzQAGFFg0AxhQgjVqmsYoBOv6l+/fuPXKu18ZiVj9JcAAN9NKkEAJzAIAAAAASUVORK5CYII="
+           alt="국토안전관리원 심볼마크" />
+    </div>
+    <h1>국토안전관리원</h1>
+    <p class="dept">국토안전기술연구원 정책연구실</p>
+  </header>
+
+  <!-- ── 메인 ─────────────────────────────────────────────────── -->
+  <main>
+    <p class="section-label">주요 링크</p>
+    <div class="card-list">
+
+      <!-- 1. 홈페이지 -->
+      <!-- TODO: URL은 이미 확정 (https://www.kalis.or.kr) — 변경 불필요 -->
+      <a class="card"
+         href="https://www.kalis.or.kr"
+         target="_blank" rel="noopener noreferrer">
+        <span class="card-icon">🏛</span>
+        <span class="card-body">
+          <span class="card-title">국토안전관리원 홈페이지</span>
+          <span class="card-desc">www.kalis.or.kr</span>
+        </span>
+        <span class="card-arrow">›</span>
+      </a>
+
+      <!-- 2. 공유 지식재산권 목록 -->
+      <a class="card"
+         href="https://www.kalis.or.kr/www/brd/m_822/list.do"
+         target="_blank" rel="noopener noreferrer">
+        <span class="card-icon">📋</span>
+        <span class="card-body">
+          <span class="card-title">공유 지식재산권 목록</span>
+          <span class="card-desc">기술이전 가능한 공유 지재권 현황</span>
+        </span>
+        <span class="card-arrow">›</span>
+      </a>
+
+      <!-- 3. 칼리스 포커스 보기 -->
+      <a class="card"
+         href="https://www.kalis.or.kr/www/brd/m_61/list.do"
+         target="_blank" rel="noopener noreferrer">
+        <span class="card-icon">📰</span>
+        <span class="card-body">
+          <span class="card-title">칼리스 포커스 보기</span>
+          <span class="card-desc">국토안전 분야 정책·연구 뉴스레터</span>
+        </span>
+        <span class="card-arrow">›</span>
+      </a>
+
+      <!-- 4. 간행물 구독 신청 -->
+      <a class="card subscribe"
+         href="https://naver.me/5vJM2GGg"
+         target="_blank" rel="noopener noreferrer">
+        <span class="card-top">
+          <span class="card-icon">✉️</span>
+          <span class="card-body">
+            <span class="card-title">간행물 받아보기</span>
+            <span class="card-desc">국토안전 매거진, 연구성과요약집 등</span>
+          </span>
+          <span class="card-arrow">›</span>
+        </span>
+        <span class="privacy-note">
+          <strong>개인정보 안내</strong>　수집항목: 이메일 주소
+          &nbsp;/&nbsp; 수집목적: 칼리스 포커스 발송
+          &nbsp;/&nbsp; 보유기간: 구독 철회 시 즉시 삭제
+        </span>
+      </a>
+
+    </div><!-- /.card-list -->
+  </main>
+
+  <!-- ── 푸터 ─────────────────────────────────────────────────── -->
+  <footer>
+    <p>© 2026 국토안전관리원. All rights reserved.</p>
+    <p>
+      <a href="https://www.kalis.or.kr" target="_blank" rel="noopener noreferrer">
+        국토안전관리원 국토안전기술연구원 정책연구실
+      </a>
+    </p>
+  </footer>
+
+  <!-- ── 연락처 모달 ────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-handle"></div>
+      <h2 class="modal-title" id="modalTitle">📞 담당자 연락처</h2>
+
+      <!--
+        TODO: 아래 표의 담당업무명과 전화번호를 실제 내용으로 교체
+              행(tr)을 복사/삭제해서 인원수에 맞게 조정
+              tel: 링크의 숫자도 함께 수정 (하이픈 포함)
+      -->
+      <table class="contact-table">
+        <thead>
+          <tr>
+            <th>담당업무</th>
+            <th>연락처</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>정책연구 총괄</td>
+            <td><a class="tel-link" href="tel:044-000-0001">044-000-0001</a></td>
+          </tr>
+          <tr>
+            <td>기술이전 및 지재권 관리</td>
+            <td><a class="tel-link" href="tel:044-000-0002">044-000-0002</a></td>
+          </tr>
+          <tr>
+            <td>연구성과 분석·확산</td>
+            <td><a class="tel-link" href="tel:044-000-0003">044-000-0003</a></td>
+          </tr>
+          <tr>
+            <td>국제협력·학술지원</td>
+            <td><a class="tel-link" href="tel:044-000-0004">044-000-0004</a></td>
+          </tr>
+          <tr>
+            <td>뉴스레터 편집·배포</td>
+            <td><a class="tel-link" href="tel:044-000-0005">044-000-0005</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="modal-close" onclick="closeModal()">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('contactModal');
+
+    function openModal() {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // 오버레이 클릭 시 닫기
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+
+    // ESC 키로 닫기
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
