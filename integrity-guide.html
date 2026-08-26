@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>청렴 가이드 열람</title>
+  <meta name="description" content="국토안전관리원 청렴 가이드, 헌장, 인증서, 신고 채널 안내" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primary: #003876;
+      --color-secondary: #0067b1;
+      --color-accent: #76bc21;
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-text: #1a1a2e;
+      --color-text-sub: #555577;
+      --color-border: #dde3ed;
+      --color-shadow: rgba(0, 56, 118, 0.10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #0d1117;
+        --color-surface: #161b22;
+        --color-text: #e6edf3;
+        --color-text-sub: #8b949e;
+        --color-border: #30363d;
+        --color-shadow: rgba(0, 0, 0, 0.40);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; }
+
+    body {
+      min-height: 100dvh;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      background: var(--color-primary);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1.25rem 1.45rem;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      min-height: 2rem;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      color: #fff;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .subtitle {
+      margin-top: 0.45rem;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.55;
+    }
+
+    main {
+      width: 100%;
+      max-width: 560px;
+      flex: 1;
+      padding: 1.35rem 1rem 0;
+    }
+
+    .section {
+      margin-top: 1.6rem;
+    }
+
+    .section:first-child {
+      margin-top: 0;
+    }
+
+    .section-title {
+      margin-bottom: 0.7rem;
+      padding-left: 0.1rem;
+      color: var(--color-text-sub);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .guide-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .guide-item {
+      overflow: hidden;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px var(--color-shadow);
+    }
+
+    .guide-caption {
+      padding: 0.9rem 0.95rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .guide-caption strong {
+      display: block;
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+
+    .guide-caption span {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--color-text-sub);
+      font-size: 0.76rem;
+      line-height: 1.45;
+    }
+
+    .guide-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+    }
+
+    .download-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .download-card {
+      display: flex;
+      align-items: center;
+      min-height: 64px;
+      padding: 0.95rem;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 12px;
+      color: var(--color-text);
+      text-decoration: none;
+      box-shadow: 0 2px 8px var(--color-shadow);
+      gap: 0.75rem;
+    }
+
+    .download-icon {
+      flex: 0 0 auto;
+      width: 1.65rem;
+      color: var(--color-secondary);
+      display: flex;
+      justify-content: center;
+    }
+
+    .download-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .download-title {
+      display: block;
+      font-size: 0.94rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .download-desc {
+      display: block;
+      margin-top: 0.18rem;
+      color: var(--color-text-sub);
+      font-size: 0.74rem;
+      line-height: 1.4;
+    }
+
+    .report-box {
+      margin-top: 1.7rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-sub);
+      font-size: 0.72rem;
+      line-height: 1.65;
+    }
+
+    .report-box strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--color-text);
+      font-size: 0.76rem;
+    }
+
+    .report-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.75rem;
+      margin-top: 0.45rem;
+    }
+
+    .report-links a {
+      color: var(--color-secondary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 2.2rem;
+      color: var(--color-text-sub);
+      text-align: center;
+      font-size: 0.72rem;
+      line-height: 1.7;
+    }
+
+    footer a {
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back-link" href="index.html" aria-label="정책연구실 바로가기 페이지로 돌아가기">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      정책연구실 바로가기
+    </a>
+    <h1>청렴 가이드 열람</h1>
+    <p class="subtitle">국토안전 청렴의지 보러가기</p>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="guideTitle">
+      <h2 class="section-title" id="guideTitle">청렴 자료</h2>
+      <div class="guide-list">
+        <article class="guide-item">
+          <div class="guide-caption">
+            <strong>윤리경영헌장</strong>
+            <span>국토안전관리원의 윤리경영 기준</span>
+          </div>
+          <img class="guide-image" src="assets/integrity/ethics-charter.webp" alt="2026 윤리경영헌장" loading="lazy" />
+        </article>
+
+        <article class="guide-item">
+          <div class="guide-caption">
+            <strong>인권경영헌장</strong>
+            <span>인권 존중과 책임 있는 경영 원칙</span>
+          </div>
+          <img class="guide-image" src="assets/integrity/human-rights-charter.webp" alt="2026 인권경영헌장" loading="lazy" />
+        </article>
+
+        <article class="guide-item">
+          <div class="guide-caption">
+            <strong>부패방지경영시스템 인증서</strong>
+            <span>ISO 37001 기반 부패방지경영시스템 인증</span>
+          </div>
+          <img class="guide-image" src="assets/integrity/anti-bribery-cert.webp" alt="부패방지경영시스템 인증서" loading="lazy" />
+        </article>
+
+        <article class="guide-item">
+          <div class="guide-caption">
+            <strong>인권경영시스템 인증서</strong>
+            <span>인권경영시스템 인증 현황</span>
+          </div>
+          <img class="guide-image" src="assets/integrity/human-rights-cert.webp" alt="인권경영시스템 인증서" loading="lazy" />
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="downloadTitle">
+      <h2 class="section-title" id="downloadTitle">다운로드</h2>
+      <div class="download-list">
+        <a class="download-card" href="assets/integrity/contract-rule-20260630.hwp" download>
+          <span class="download-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </span>
+          <span class="download-body">
+            <span class="download-title">계약사무처리규칙</span>
+            <span class="download-desc">HWP 다운로드 · 2026.06.30</span>
+          </span>
+        </a>
+
+        <a class="download-card" href="assets/integrity/whistleblower-protection-guideline-20231204.hwp" download>
+          <span class="download-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </span>
+          <span class="download-body">
+            <span class="download-title">공익신고 처리 및 신고자 보호 운영지침</span>
+            <span class="download-desc">HWP 다운로드 · 2023.12.04</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <aside class="report-box" aria-label="청렴 신고 채널">
+      <strong>청렴 신고 채널</strong>
+      업무 과정에서 부당한 요구, 금품·향응 제공 요청, 불공정한 처우 등을 경험하신 경우 아래 신고 채널을 이용하실 수 있습니다.
+      <div class="report-links">
+        <a href="https://cloud.kbei.org/whistle/center/?code=kalisgam" target="_blank" rel="noopener noreferrer">익명신고</a>
+        <a href="https://open.kakao.com/o/sAWIACKi" target="_blank" rel="noopener noreferrer">자체 익명신고 오픈채팅방</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2026 국토안전관리원. All rights reserved.</p>
+    <p><a href="index.html">정책연구실 바로가기</a></p>
+  </footer>
+</body>
+</html>
